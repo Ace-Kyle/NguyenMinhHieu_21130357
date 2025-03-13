@@ -2,14 +2,22 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int[] initArr = {1, 12, 9, 4, 15, 6, 27, 8, 39};
+        int n = 5;
+    }
+    private static void findLargestAt(int findRank, int[] arr){
+        for (int element: arr) {
+            int rank = 1;
+            for (int scanAt: arr){
+                if (element > scanAt) rank++;
+                if (rank > findRank) break;
+            }
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+            //check
+            if(rank == findRank){
+                System.out.println("Found is: " + element);
+                return;
+            }
         }
     }
 }

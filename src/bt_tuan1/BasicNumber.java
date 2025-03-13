@@ -56,7 +56,7 @@ public class BasicNumber {
         int found = 0;
         for (int i=1; i<=numb; i++) {
 
-            //isFractional?
+            //isPrim?
             int foundModule = 0;
             for (int m = 1; m <= i; m++) {
                 if (i % m == 0) foundModule++;
