@@ -65,17 +65,16 @@ public class PascalTriangle {
     public static boolean isEvenAndOddOnCross(int[][] matrix){
         int value = 0;
         for(int row = 0; row < matrix.length; row++){
-            for (int col = 0; col < matrix[row].length; col++){
-                //if odd
-                value = matrix[row][col];
-                if ((col+1) %2 == 0){
-                    //for EVEN
-                    if (value % 2 != 0) return false;
-                }else {
-                    //for ODD
-                    if (value %2 != 1) return false;
-                }
+            //if odd
+            value = matrix[row][row];
+            if ((row+1) %2 == 0){
+                //for EVEN
+                if (value % 2 != 0) return false;
+            }else {
+                //for ODD
+                if (value %2 != 1) return false;
             }
+
         }
         return true;
     }
