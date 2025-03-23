@@ -1,20 +1,16 @@
 package selfpractice;
 
+import static java.lang.System.*;
+
 public class NumberOperator {
     public static void main(String[] args) {
-        int a = 1234567890;
-        int b = 5;
+        int n = 10;
 
-        while (b <= 7){
-            ++b;
-            System.out.println(b);
-            ++b; //7
-            System.out.println(b);
-            b+=5;
-            System.out.println("continue="+b);
-            ++b;
+        if (n < 10){
+            out.println("10 is less than or equal to 10");
+        } else {
+            out.println("10 is greater than or equal to 10");
         }
-
 
     }
 }

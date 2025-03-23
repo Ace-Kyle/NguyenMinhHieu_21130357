@@ -1,6 +1,4 @@
-package bt_tuan3;
-
-import bt_tuan2.BasicArray;
+package bt_tuan2;
 
 public class PascalTriangle {
     //bai 6: print pascal retangle
