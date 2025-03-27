@@ -98,7 +98,7 @@ public class Week4 {
 decryptedString += (decryptedChar == '-')?' ': decryptedChar;
             }
         }
-        return decryptedString;
+        return decryptedString.trim();
     }
     public static char cipherHelper(char character, int key){
         //encryption or decryption
