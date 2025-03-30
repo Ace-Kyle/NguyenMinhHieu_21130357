@@ -94,7 +94,8 @@ public class Week4 {
         String decryptedString = "";
         for (int rowIndex = 0; rowIndex < row; rowIndex++){
             for (int col=0; col < column; col++){
-                decryptedString += cipherHelper(decryptionTable[rowIndex][col], column);
+                char decryptedChar = cipherHelper(decryptionTable[rowIndex][col], column);
+                decryptedString += (decryptedChar == '-'?' ':decryptedChar);
             }
         }
         return decryptedString;
