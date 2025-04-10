@@ -1,5 +1,7 @@
 package bt_atclass;
 
+import java.util.Arrays;
+
 class Test {
     public static void main(String[] args) {
 
@@ -8,18 +10,18 @@ class Test {
         int[] arr2 = {3,15,26,34,32,52,58};
         int[] arr3 = {4,6,3,3,15,64,234,652};
 
-        Week6.splitArrayIntoEventAndOdd(arr);
-        Week6.splitArrayIntoEventAndOdd(arr2);
-        Week6.splitArrayIntoEventAndOdd(arr3);
+        System.out.println(Arrays.toString(Week6.splitArrayIntoEventAndOdd(arr)));
+        System.out.println(Week6.splitArrayIntoEventAndOdd(arr2));
+        System.out.println(Week6.splitArrayIntoEventAndOdd(arr3));
 
         //bai 2: tinh tong
-        Week6.totalExpression(5, 10);
+        System.out.println(Week6.totalExpression(5, 10));
 
-        Week6.totalExpression(0, 15);
-        Week6.totalExpression(5, 0);
+        System.out.println(Week6.totalExpression(0, 15));
+        System.out.println(Week6.totalExpression(5, 0));
 
-        Week6.totalExpression(1, 1);
-        Week6.totalExpression(1, 10);
+        System.out.println(Week6.totalExpression(1, 1));
+        System.out.println(Week6.totalExpression(1, 10));
 
         //bai 3: kiem tra duong cheo chinh
         int[][] matrix = {

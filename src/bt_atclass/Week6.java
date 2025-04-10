@@ -2,21 +2,31 @@ package bt_atclass;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Week6 {
 
     //bai 1: tach manh chan le
-    public static void splitArrayIntoEventAndOdd(int[] arr){
-        ArrayList<Integer> arr1 = new ArrayList<>(); //chan
-        ArrayList<Integer> arr2 = new ArrayList<>(); //le
+    public static int[][] splitArrayIntoEventAndOdd(int[] arr){
+        ArrayList<Integer> list1 = new ArrayList<>(); //even
+        ArrayList<Integer> list2 = new ArrayList<>(); //odd
 
         for(int i=0;i<arr.length;i++){
-            if(arr[i]%2==0){ arr1.add(arr[i]); }
-            else { arr2.add(arr[i]); }
+            if(arr[i]%2==0){
+                list1.add(arr[i]); }
+            else {
+                list2.add(arr[i]); }
         }
-        System.out.println("-------Ket qua tach mang-------");
-        System.out.println(String.format("Mang so CHAN: %s", Arrays.toString(arr1.toArray())));
-        System.out.println(String.format("Mang so LE: %s", Arrays.toString(arr2.toArray())));
+        /*return new Object[][]{
+                list1.toArray(),
+                list2.toArray()
+        };*/
+        int[] arr1 = new int[list1.size()];
+        int[] arr2 = new int[list2.size()];
+        for (int i=0;i<arr1.length;i++) arr1[i] = list1.get(i);
+        for (int i=0;i<arr2.length;i++) arr2[i] = list2.get(i);
+
+        return new int[][]{arr1, arr2};
     }
 
     //bai 2: tinh tong theo cong thuc
