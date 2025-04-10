@@ -48,8 +48,23 @@ public class Week6Maxtrix {
     }
     //Triangle matrix
     public static int[][] plusMatrixTriangle(int[][]a, int[][] b){
+        if (a.length != b.length &&
+                a[0].length != b[0].length){
+            System.out.println("2 matrixes are not the same level");
+            return null;
+        }
+        int[][] result = new int[a.length][];
+        int vA = 0, vB = 0;
+        for (int i=0; i < a.length; i++){
 
-        return null;
+            int max = Math.max(a[i].length, b[i].length);
+            for (int m=0; m< max; m++){
+                vA = m > (a[i].length -1)? 0: a[i][m];
+                vB = m > (b[i].length -1)? 0: b[i][m];
+                result[i][m] = vA + vB;
+            }
+        }
+        return result;
     }
 
 

@@ -56,7 +56,11 @@ class Test {
         //b: multiply
         Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(a, b));
         Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(a, b44));
-        Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(b44, b34));
+        //Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(b44, b34)); //error
+
+        //TRIANGLE
+
+
 
     }
 }
