@@ -1,5 +1,7 @@
 package bt_tuan6;
 
+import java.util.ArrayList;
+
 public class Week6 {
 
     //bai 17
@@ -34,7 +36,7 @@ public class Week6 {
         return index;
     }
 
-    //c
+    //c - MYSELF
     public static int sumOfMaxes(int[] arr, int n){
         int sum = 0;
 
@@ -56,6 +58,25 @@ public class Week6 {
         return sum;
     }
 
-    //bai 18: maxtrix
+    //FOLLOW Idea of teacher at lab room
+    public static int sumOfMaxes2(int[] arr, int n){
+        ArrayList<Integer> listOfFoundMax = new ArrayList<>();
+        int sum = 0;
+        int max = arr[0];
+        int index = 0;
+
+        for (int time=0; time < n; time++) {
+            for (int at=1; at < arr.length; at++){
+                if (arr[at] > max && !listOfFoundMax.contains(at)){
+                    max = arr[at];
+                    index = at;
+                }
+            }
+            listOfFoundMax.add(index);
+            sum += arr[index];
+        }
+
+        return sum;
+    }
 
 }
