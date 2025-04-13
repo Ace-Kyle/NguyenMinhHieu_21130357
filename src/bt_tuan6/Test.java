@@ -12,6 +12,7 @@ class Test {
         int[] arr = {3,54,23,2,7,34,23,75,8,1,9};
         //a:
         //MAX
+        System.out.println("__________Bai 17");
         System.out.println(String.format("Find MAX: %d", Week6.findMax(arr)));
         //MIN
         System.out.println(String.format("Find MIN: %d",Week6.findMin(arr)));
@@ -50,15 +51,31 @@ class Test {
                 {5,2,2,6},
                 {6,9,-6,7}
         };
+        System.out.println("__________Bai 18");
         //a: plus
+        System.out.println("SQUARE - PLUS");
         Helper.printMatrixNew(Week6Maxtrix.plusMatrix(a, b));
         Helper.printMatrixNew(Week6Maxtrix.plusMatrix(a, b44));
         //b: multiply
+        System.out.println("SQUARE - MULTIPLY");
         Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(a, b));
         Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(a, b44));
-        //Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(b44, b34)); //error
+        Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(b44, b34));
 
         //TRIANGLE
+        //a: plus
+        int[][] t1 = {
+                {1,},
+                {5,6,},
+                {8,9,10}
+        };
+        int[][] t2 = {
+                {4,},
+                {5,2,},
+                {6,9,-6}
+        };
+        System.out.println("TRIANGLE - PLUS");
+        Helper.printMatrixNew(Week6Maxtrix.plusMatrixTriangle(t1, t2));
 
 
 
