@@ -53,11 +53,11 @@ class Test {
         };
         System.out.println("__________Bai 18");
         //a: plus
-        System.out.println("SQUARE - PLUS");
+        System.out.println("__________SQUARE - PLUS");
         Helper.printMatrixNew(Week6Maxtrix.plusMatrix(a, b));
         Helper.printMatrixNew(Week6Maxtrix.plusMatrix(a, b44));
         //b: multiply
-        System.out.println("SQUARE - MULTIPLY");
+        System.out.println("__________SQUARE - MULTIPLY");
         Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(a, b));
         Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(a, b44));
         Helper.printMatrixNew(Week6Maxtrix.multiplyMatrix(b44, b34));
@@ -74,7 +74,7 @@ class Test {
                 {5,2,},
                 {6,9,-6}
         };
-        System.out.println("TRIANGLE - PLUS");
+        System.out.println("__________TRIANGLE - PLUS");
         Helper.printMatrixNew(Week6Maxtrix.plusMatrixTriangle(t1, t2));
 
 
