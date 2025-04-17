@@ -53,7 +53,7 @@ public class StudentManagement {
         }
     }
 
-    public Student findStudentByNameAndId(String name, String id){
+    public Student findStudentByNameAndId(String id, String name){
        for (Student student : list) {
            if (student.getName().equals(name) && student.getId().equals(id)) {
                return student;

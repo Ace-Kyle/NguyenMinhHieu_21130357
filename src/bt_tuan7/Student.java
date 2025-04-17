@@ -23,11 +23,12 @@ public class Student {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", birthDay=" + birthDay +
+                ", avgScore=" + printAvgScore() +
                 '}';
     }
 
-    public String printInorgeName(){
-        return "id=%s, birthDate=%s, listCourse=%s".formatted(id, birthDay, listCourse);
+    public String printAvgScore(){
+        return "%.1f".formatted(avgScore());
     }
 
     public boolean checkDupplicate(String id){
