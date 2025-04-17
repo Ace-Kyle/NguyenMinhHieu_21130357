@@ -1,5 +1,6 @@
 package bt_tuan7;
 
+import java.io.StringReader;
 import java.util.Objects;
 
 class Test {
@@ -53,6 +54,15 @@ class Test {
         manager.updateScore(10, sub1.getId(), st1.getId());
         System.out.println("========= After udpate score ==========");
         manager.printAll();
+
+        //find sutdent
+        String findStudentId = "101";
+        String findStudentNameA = "Nguyen Van A";
+        String findStudentNameB = "Nguyen Van B";
+        System.out.println("========= Find student ==========");
+        System.out.println(String.format("Found >%s", manager.findStudentByNameAndId(findStudentId, findStudentNameA)));
+        System.out.println(String.format("Found >%s", manager.findStudentByNameAndId(findStudentId, findStudentNameB)));
+
 
 
     }
