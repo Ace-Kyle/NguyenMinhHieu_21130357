@@ -5,9 +5,15 @@ public class Date {
     int month;
     int year;
 
+    public Date(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+
     @Override
     public String toString() {
-        return "[Day=%d, Month=%d, Year=%d]".formatted(day, month, year);
+        return "[%d/%d/%d]".formatted(day, month, year);
     }
 
     public int getDay() {

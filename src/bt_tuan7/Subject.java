@@ -5,9 +5,19 @@ public class Subject {
     private String name;
     private double score;
 
+    public Subject(String id, String name, double score) {
+        this.id = id;
+        this.name = name;
+        this.score = score;
+    }
+
+    public Subject getClone() {
+        return new Subject(id, name, score);
+    }
+
     @Override
     public String toString() {
-        return "Subject [id=%d, name=%d, score=%d]".formatted(id, name, score);
+        return String.format("Subject [id=%s, name=%s, score=%s]",id, name, score);
     }
 
     public String getId() {

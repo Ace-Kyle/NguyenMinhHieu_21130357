@@ -1,6 +1,6 @@
 package bt_tuan7;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -14,6 +14,7 @@ public class Student {
         this.id = id;
         this.name = name;
         this.birthDay = birthDay;
+        listCourse = new ArrayList<Subject>();
     }
 
     @Override
@@ -22,14 +23,15 @@ public class Student {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", birthDay=" + birthDay +
-                ", listCourse=" + listCourse +
                 '}';
     }
 
-    public String printAll(){}
+    public String printInorgeName(){
+        return "id=%s, birthDate=%s, listCourse=%s".formatted(id, birthDay, listCourse);
+    }
 
     public boolean checkDupplicate(String id){
-        return this.id.equals(id);
+        return this.id.equalsIgnoreCase(id);
     }
     public double avgScore() {
         double sum = 0;
