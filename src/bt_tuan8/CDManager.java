@@ -54,22 +54,13 @@ public class CDManager {
     }
 
     public int computeNumberOfCD(){
-        int total = 0;
-        for (CD cd : list){
-            if (cd == null) continue;
-            total += cd.getNumberOfSong();
-        }
-        return total;
-    }
-
-    public int numberOfCD(){
         return pos == 0 ? 0 : pos++;
     }
 
     public double totalPrice(){
         double total = 0;
         for (CD cd : list){
-            total += cd.getNumberOfSong()*cd.getPrice();
+            total += cd.getPrice();
         }
         return total;
     }
