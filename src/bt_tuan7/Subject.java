@@ -11,6 +11,9 @@ public class Subject {
         this.score = score;
     }
 
+
+    //Solve problem: clone a subject object
+    //instead of create new subject ones manaully on Test class
     public Subject getClone() {
         return new Subject(id, name, score);
     }
