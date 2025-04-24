@@ -49,7 +49,7 @@ public class CDManager {
             list[pos++] = cd;
             return true;
         }
-        System.out.println("Cannot add CD");
+        System.out.println("Cannot add CD with ID: "+cd.getId());
         return false;
     }
 
