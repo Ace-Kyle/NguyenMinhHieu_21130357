@@ -38,7 +38,7 @@ public class CDManager {
                 CD existingCD;
                 for (int i=0; i < pos; i++ ) {
                     existingCD = list[i];
-                    //TODO find out why foreach is not ignore null in array
+                    //TODO find out why foreach does not ignore null in array
                     //System.out.println("----DEBUG: existingCD: " + existingCD.getId());
                     if (existingCD.isDuplicateID(cd.getId())) {
                         System.out.println("Found duplicate CD when adding");
