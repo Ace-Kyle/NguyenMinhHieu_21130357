@@ -17,7 +17,9 @@ public class Dictionary extends Word<String, String>{
 
     public void search(String english){
         for (Word<String, String> word : list) {
-            if (word.getEnglish().equals(english)){
+
+            //use equalsIgnoreCase instead of equals. Because the input maybe in lowercase;
+            if (word.getEnglish().equalsIgnoreCase(english)){
                 System.out.println(">>Result:\t" +word);
                 return;
             }

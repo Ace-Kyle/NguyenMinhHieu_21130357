@@ -11,10 +11,13 @@ class Test {
 
         //search
         dict.search("Hello");
+        dict.search("hello"); //lowercase
+
         dict.search("Database");
         dict.search("Array");
 
         dict.search("List");
+        dict.search("SpringFramework");
 
     }
 }
