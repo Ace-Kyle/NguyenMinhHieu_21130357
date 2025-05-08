@@ -15,6 +15,7 @@ class Test {
         dict.search("Array");
 
         dict.search("List");
+        dict.search("SpringFramework");
 
     }
 }
