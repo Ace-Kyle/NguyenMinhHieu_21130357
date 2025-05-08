@@ -33,5 +33,9 @@ class Test {
 
         System.out.println("========= Danh sach sinh vien");
         uni.printSinhVien();
+
+        //tim nhan vien luong cao nhat
+        System.out.println("========= Tim nhan vien luong cao nhat");
+        System.out.println(uni.timNhanVienLuongCaoNhat());
     }
 }

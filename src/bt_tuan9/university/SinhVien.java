@@ -10,7 +10,7 @@ public class SinhVien extends Nguoi{
         super(name, birthYear);
         this.d1 = d1;
         this.d2 = d2;
-        this.d2 = d3;
+        this.d3 = d3;
     }
 
     public SinhVien() {
@@ -20,5 +20,5 @@ public class SinhVien extends Nguoi{
     public void print(){
         System.out.println(toString());
     }
-    public String toString(){ return super.toString() + String.format("%f \t %f \t %f", d1, d2, d3);}
+    public String toString(){ return super.toString() + String.format("%.1f \t %.1f \t %.1f", d1, d2, d3);}
 }

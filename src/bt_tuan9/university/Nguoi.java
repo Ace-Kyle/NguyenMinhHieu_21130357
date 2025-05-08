@@ -17,7 +17,7 @@ public abstract class Nguoi {
     public void print(){
         System.out.println(toString());
     }
-    public String toString(){ return String.format("%s \t %d", name, birthYear);}
+    public String toString(){ return String.format("%s \t %s\t", name, birthYear);}
     public double inLuong(){ return 0;}
     public double tinhLuong(){ return 0;}
 

@@ -19,8 +19,10 @@ public class NhanVien extends Nguoi {
 
     @Override
     public String toString() {
-        return super.toString() + String.format("luong: %f, ngayNhanViec: %s, phongBan: %s", luong, ngayNhanViec, phongBan);
+        return super.toString() + String.format("luong: %.1f, ngayNhanViec: %s, phongBan: %s", luong, ngayNhanViec, phongBan);
     }
 
-    public double tinhLuong(){ return luong;}
+    public double tinhLuong() {
+        return luong;
+    }
 }
