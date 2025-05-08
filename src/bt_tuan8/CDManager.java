@@ -49,7 +49,7 @@ public class CDManager {
             list[pos++] = cd;
             return true;
         }
-        System.out.println("Cannot add CD with ID: "+cd.getId());
+        System.out.println("[ERROR] Cannot add CD with ID: "+cd.getId());
         return false;
     }
 
@@ -60,6 +60,7 @@ public class CDManager {
     public double totalPrice(){
         double total = 0;
         for (CD cd : list){
+            if (cd == null) continue;
             total += cd.getPrice();
         }
         return total;

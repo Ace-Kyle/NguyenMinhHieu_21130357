@@ -10,7 +10,7 @@ class Test {
         CD cd6 = new CD(106, "Stiches",             "Shawn Mendes", 17, 20);
         CD cd7 = new CD(107, "Hello",               "Adele", 9, 15);
         CD cd8 = new CD(108, "Swings",              "Birdy", 8, 10);
-        CD cd9 = new CD(109, "Persona",             "The Vamps", 5, 15);
+        CD cd9 = new CD(109, "Can We Dance",             "The Vamps", 5, 15);
         CD cd10 = new CD(110, "Kungfu Fighting",    "The Vamps", 14, 3);
 
         CDManager manager = new CDManager();
