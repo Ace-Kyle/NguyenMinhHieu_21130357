@@ -12,7 +12,7 @@ public class SimpleDraw extends JFrame {
     private JPanel panelNorth, panelWest, panelCenter;
 
     private JButton btnClear, btnRed, btnBlue;
-    private JRadioButton btnSquare, btnOval;
+    private JRadioButton btnSquare, btnOval, btnLine;
     private JRadioButton btnFill, btnOutline;
     private ButtonGroup groupShape, groupType;
 
@@ -38,6 +38,38 @@ public class SimpleDraw extends JFrame {
         panelWest.setLayout(new FlowLayout());
         panelWest.setBackground(Color.PINK);
 
+        //menu
+        JMenuItem itemSquare = new JMenuItem(btnSquareAction);
+        JMenuItem itemOval = new JMenuItem(btnOvalAction);
+        JMenuItem itemLine = new JMenuItem(btnLineAction);
+
+        JMenuItem itemRed = new JMenuItem(btnRedAction);
+        JMenuItem itemBlue = new JMenuItem(btnBlueAction);
+
+        JMenuItem itemFill = new JMenuItem(btnFillAction);
+        JMenuItem itemOutline = new JMenuItem(btnOutlineAction);
+
+        JMenu shapeMenu = new JMenu("Shape");
+            shapeMenu.add(itemSquare);
+            shapeMenu.add(itemOval);
+            shapeMenu.add(itemLine);
+        JMenu colorMenu = new JMenu("Color");
+            colorMenu.add(itemRed);
+            colorMenu.add(itemBlue);
+        JMenu typeMenu = new JMenu("Type");
+            typeMenu.add(itemFill);
+            typeMenu.add(itemOutline);
+        JMenu fileMenu = new JMenu("File");
+            fileMenu.add(new JMenuItem(exitAction));
+
+        JMenuBar menuBar = new JMenuBar();
+        menuBar.add(fileMenu);
+        menuBar.add(shapeMenu);
+        menuBar.add(colorMenu);
+        menuBar.add(typeMenu);
+
+        toolBar.add(menuBar);
+
         //button
         btnClear = new JButton("Clear");
         btnClear.addActionListener(new ActionListener() {
@@ -47,24 +79,26 @@ public class SimpleDraw extends JFrame {
                 panelCenter.repaint();
             }
         });
-        btnBlue = new JButton("Blue");
+/*        btnBlue = new JButton("Blue");
         btnBlue.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedColor = "Blue";
             }
-        });
+        });*/
+        btnBlue = new JButton(btnBlueAction);
         btnBlue.setBackground(Color.BLUE);
-        btnRed = new JButton("Red");
+/*        btnRed = new JButton("Red");
         btnRed.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedColor = "Red";
             }
-        });
+        });*/
+        btnRed = new JButton(btnRedAction);
         btnRed.setBackground(Color.RED);
 
-        btnSquare = new JRadioButton("Square");
+        /*btnSquare = new JRadioButton("Square");
         btnSquare.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,7 +125,13 @@ public class SimpleDraw extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 selectedType = "Outline";
             }
-        });
+        });*/
+        btnSquare = new JRadioButton(btnSquareAction);
+        btnOval = new JRadioButton(btnOvalAction);
+        btnLine = new JRadioButton(btnLineAction);
+
+        btnFill = new JRadioButton(btnFillAction);
+        btnOutline = new JRadioButton(btnOutlineAction);
 
         //add
         panelNorth.add(btnRed);
@@ -102,6 +142,7 @@ public class SimpleDraw extends JFrame {
         groupShape = new ButtonGroup();
         groupShape.add(btnSquare);
         groupShape.add(btnOval);
+        groupShape.add(btnLine);
 
         groupType = new ButtonGroup();
         groupType.add(btnFill);
@@ -109,6 +150,7 @@ public class SimpleDraw extends JFrame {
 
         panelNorth.add(btnSquare);
         panelNorth.add(btnOval);
+        panelNorth.add(btnLine);
         panelNorth.add(btnFill);
         panelNorth.add(btnOutline);
         toolBar.add(panelNorth);
@@ -121,7 +163,64 @@ public class SimpleDraw extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
+
+
     }
+
+    //Refactor code - reuse
+    //Action for color
+    Action btnRedAction = new AbstractAction("Red") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            selectedColor = "Red";
+        }
+    };
+    Action btnBlueAction = new AbstractAction("Blue") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            selectedColor = "Blue";
+        }
+    };
+
+    //Action for shape
+    Action btnSquareAction = new AbstractAction("Square") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            selectedShape = "Square";
+        }
+    };
+    Action btnOvalAction = new AbstractAction("Oval") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            selectedShape = "Oval";
+        }
+    };
+    Action btnLineAction = new AbstractAction("Line") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            selectedShape = "Line";
+        }
+    };
+    Action btnFillAction = new AbstractAction("Fill") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            selectedType = "Fill";
+        }
+    };
+    Action btnOutlineAction = new AbstractAction("Outline") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            selectedType = "Outline";
+        }
+    };
+    Action exitAction = new AbstractAction("Exit") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0);
+        }
+    };
+
+
 
     private class ProcessPain extends JPanel{
         Point first = null;
@@ -168,6 +267,9 @@ public class SimpleDraw extends JFrame {
                             if(isFill){g.fillOval(mx, my, size, size);}
                             g.drawOval(mx, my, size, size);
                             break;
+                        }
+                        case "Line":{
+                            g.drawLine(mx, my, mx+size, my+size);
                         }
 
                     }
