@@ -5,9 +5,10 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class ShopOnline extends JFrame {
-    private JPanel TOP, BOTTOM;
+    private JPanel TOP, BOTTOM, LOW;
     private JPanel customerInfoPanel, productInfoPanel, functionPanel, finalPricePanel;
     private JScrollPane orderPanel;
+
     public ShopOnline() {
         super("Shop Online");
         TOP = new JPanel(new BorderLayout());
@@ -19,10 +20,12 @@ public class ShopOnline extends JFrame {
         orderPanel = new JScrollPane();
         finalPricePanel = new JPanel();
 
+        //layout
         customerInfoPanel.setLayout(new GridLayout(3, 2));
         productInfoPanel.setLayout(new GridLayout(2, 2));
         functionPanel.setLayout(new FlowLayout());
 
+        //border
         customerInfoPanel.setBorder(BorderFactory.createTitledBorder("Thong tin khach hang"));
         productInfoPanel.setBorder(BorderFactory.createTitledBorder("Chon san pham"));
         functionPanel.setBorder(BorderFactory.createTitledBorder("Thao tac dat hang"));
@@ -30,7 +33,16 @@ public class ShopOnline extends JFrame {
 
 
         //customerPanel
+        JTextField nameField = new JTextField(10);
+        JTextField addressField = new JTextField(10);
+        JTextField phoneField = new JTextField(10);
 
+        customerInfoPanel.add(new JLabel("Ho ten:"));
+        customerInfoPanel.add(nameField);
+        customerInfoPanel.add(new JLabel("Dia chi:"));
+        customerInfoPanel.add(addressField);
+        customerInfoPanel.add(new JLabel("So dien thoai:"));
+        customerInfoPanel.add(phoneField);
         //customerInfoPanel.setLayout();
 
         //productInfoPanel
@@ -43,12 +55,44 @@ public class ShopOnline extends JFrame {
         productInfoPanel.add(check3);
         productInfoPanel.add(check4);
 
+        //functionPanel
+        JButton book = new JButton("DatHang");
+        JButton cancel = new JButton("Thoat");
+        JButton delete = new JButton("Xoa SP");
+        JButton pay = new JButton("Thanh toan");
+        functionPanel.add(book);
+        functionPanel.add(cancel);
+        functionPanel.add(delete);
+        functionPanel.add(pay);
+
+
         //orderPanel
-        JTable table = new JTable(new DefaultTableModel());
-        orderPanel.add(table);
+        String[] columnNames = {"STT", "Ten san pham", "Don gia"};
+        Object[][] initData = {
+                {"1", "Banh trang tron", "10000"},
+                {"2", "Tra sua tran chau", "20000"},
+                {"3", "Khoai tay chien", "15000"},
+                {"4", "Banh trang tron", "10000"},
+                {"1", "Banh trang tron", "10000"},
+                {"2", "Tra sua tran chau", "20000"},
+                {"3", "Khoai tay chien", "15000"},
+                {"4", "Banh trang tron", "10000"},
+                {"1", "Banh trang tron", "10000"},
+                {"2", "Tra sua tran chau", "20000"},
+                {"3", "Khoai tay chien", "15000"},
+                {"4", "Banh trang tron", "10000"},
+                {"1", "Banh trang tron", "10000"},
+                {"2", "Tra sua tran chau", "20000"},
+                {"3", "Khoai tay chien", "15000"},
+                {"4", "Banh trang tron", "10000"}
+        };
+        JTable table = new JTable(initData, columnNames);
+        table.setFillsViewportHeight(true);
+        orderPanel.setViewportView(table);
 
         //finalPricePanel
-        finalPricePanel.add(new JLabel("0.0"));
+        JLabel finalPrice = new JLabel("0.0");
+        finalPricePanel.add(finalPrice);
 
 
 
@@ -66,12 +110,13 @@ public class ShopOnline extends JFrame {
         //setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         setLayout(new BorderLayout());
         getContentPane().add(TOP, BorderLayout.NORTH);
-        getContentPane().add(productInfoPanel, BorderLayout.CENTER);
+        getContentPane().add(BOTTOM, BorderLayout.CENTER);
 
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 500);
         setLocationRelativeTo(null);
+        //pack();
         setVisible(true);
     }
     public static void main(String[] args) {
